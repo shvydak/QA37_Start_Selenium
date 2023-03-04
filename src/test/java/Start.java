@@ -11,9 +11,8 @@ public class Start {
         wd=new ChromeDriver();
 //        wd.get("https://www.google.com/");
         wd.navigate().to("https://www.google.com/");
-        wd.navigate().refresh();
 
-        wd.close(); // close only one tab, if there is just only tab - it closes the browser
+//        wd.close(); // close only one tab, if there is just only tab - it closes the browser
         wd.quit(); // close the browser with all opened tabs
     }
 
