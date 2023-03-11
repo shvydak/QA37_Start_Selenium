@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -9,7 +10,9 @@ public class LoginTests {
 @BeforeClass
     public void preConditions(){
     //open browser
-    wd = new ChromeDriver();
+    ChromeOptions co = new ChromeOptions();
+    co.addArguments("--remote-allow-origins=*");
+    WebDriver wd = new ChromeDriver(co);
     //open site
     wd.navigate().to("https://telranedu.web.app/home");
 //    wd.get("https://telranedu.web.app/home");

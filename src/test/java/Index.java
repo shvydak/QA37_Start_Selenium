@@ -17,6 +17,11 @@ public class Index {
     }
 
     @Test
+    public void tableTest() {
+        WebElement canada = wd.findElement(By.cssSelector("tr:nth-child(3) td:last-child"));
+    }
+
+    @Test
     public void cssLocators() {
         // by tag name
 
