@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.nio.file.WatchEvent;
+
 public class HomeWork {
 
     WebDriver wd;
@@ -28,53 +30,75 @@ public class HomeWork {
 
         WebElement byTagName1 = wd.findElement(By.tagName("div"));
         WebElement cssByTagName1 = wd.findElement(By.cssSelector("div"));
+        WebElement xPathTagName1 = wd.findElement(By.xpath("//div"));
 
         WebElement byTagName2 = wd.findElement(By.tagName("h1"));
         WebElement cssByTagName2 = wd.findElement(By.cssSelector("h1"));
+        WebElement xPathTagName2 = wd.findElement(By.xpath("//h1"));
 
         WebElement byTagName3 = wd.findElement(By.tagName("form"));
         WebElement cssByTagName3 = wd.findElement(By.cssSelector("form"));
+        WebElement xPathTagName3 = wd.findElement(By.xpath("//form"));
 
         WebElement byTagName4 = wd.findElement(By.tagName("input"));
         WebElement cssByTagName4 = wd.findElement(By.cssSelector("input"));
+        WebElement xPathTagName4 = wd.findElement(By.xpath("//input"));
 
         WebElement byTagName5 = wd.findElement(By.tagName("button"));
         WebElement cssByTagName5 = wd.findElement(By.cssSelector("button"));
+        WebElement xPathTagName5 = wd.findElement(By.xpath("//button"));
 
         // by class
         WebElement byClassName0 = wd.findElement(By.className("container"));
         WebElement cssByClassName0 = wd.findElement(By.cssSelector(".container"));
+        WebElement xPathByClassName0 = wd.findElement(By.xpath("//*[@class='container']"));
 
         WebElement byClassName1 = wd.findElement(By.className("navbar-component_nav__1X_4m"));
         WebElement cssByClassName1 = wd.findElement(By.cssSelector(".navbar-component_nav__1X_4m"));
+        WebElement xPathByClassName1 = wd.findElement(By.xpath("//*[@class='navbar-component_nav__1X_4m']"));
 
         WebElement byClassName2 = wd.findElement(By.className("active"));
         WebElement cssByClassName2 = wd.findElement(By.cssSelector(".active"));
+        WebElement xPathByClassName2 = wd.findElement(By.xpath("//*[@class='active']"));
 
         WebElement byClassName3 = wd.findElement(By.className("login_login__3EHKB"));
         WebElement cssByClassName3 = wd.findElement(By.cssSelector(".login_login__3EHKB"));
+        WebElement xPathByClassName3 = wd.findElement(By.xpath("//*[@class='login_login__3EHKB']"));
 
         //By id
         WebElement byId0 = wd.findElement(By.id("root"));
         WebElement cssById0 = wd.findElement(By.cssSelector("#root"));
+        WebElement xPathById0 = wd.findElement(By.xpath("//*[@id='root']"));
 
         // by attribute
         WebElement byAttribute0 = wd.findElement(By.name("email"));
         WebElement cssByAttribute0 = wd.findElement(By.cssSelector("[name='email']"));
+        WebElement xPathByAttribute0 = wd.findElement(By.xpath("//*[@name='email']"));
 
-        WebElement cssbyAttribute0 = wd.findElement(By.cssSelector("[placeholder='Email']"));
-        WebElement cssbyAttribute1 = wd.findElement(By.cssSelector("[name='password']"));
-        WebElement cssbyAttribute2 = wd.findElement(By.cssSelector("[href='/login']"));
-        WebElement cssbyAttribute3 = wd.findElement(By.cssSelector("placeholder='Password'"));
+        WebElement cssByAttribute1 = wd.findElement(By.cssSelector("[placeholder='Email']"));
+        WebElement xPathByAttribute1 = wd.findElement(By.xpath("//*[@placeholder='Email']"));
+
+        WebElement cssByAttribute2 = wd.findElement(By.cssSelector("[name='password']"));
+        WebElement xPathByAttribute2 = wd.findElement(By.xpath("//*[@name='password']"));
+
+        WebElement cssByAttribute3 = wd.findElement(By.cssSelector("[href='/login']"));
+        WebElement xPathByAttribute3 = wd.findElement(By.xpath("//*[@href='/login']"));
+
+        WebElement cssByAttribute4 = wd.findElement(By.cssSelector("[placeholder='Password']"));
+        WebElement xPathByAttribute4 = wd.findElement(By.xpath("//*[@placeholder='Password']"));
 
         // one of elements find by attribute ==> start & end & contains value
         WebElement cssbyAttribute4 = wd.findElement(By.cssSelector("[name='registration']"));
+        WebElement xPathByAttribute5 = wd.findElement(By.xpath("//*[@name='registration']"));
         //Start
         WebElement cssbyAttributeStart = wd.findElement(By.cssSelector("[name^='regist']"));
+        WebElement xPathByAttributeStart = wd.findElement(By.xpath("//*[starts-with(@name, 'regist')]"));
 
         //End
         WebElement cssbyAttributeEnd = wd.findElement(By.cssSelector("[name$='ration']"));
+        WebElement xPathByAttributeEnd = wd.findElement(By.xpath("//*[contains(@name, 'ration')]"));
         // contains
         WebElement cssbyAttributeContain = wd.findElement(By.cssSelector("[name*='gistrati']"));
+        WebElement xPathByAttributeContain = wd.findElement(By.xpath("//*[contains(@name, 'gistrati')]"));
     }
 }
