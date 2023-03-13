@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.nio.file.WatchEvent;
+import java.util.List;
 
 public class HomeWork {
 
@@ -101,4 +102,47 @@ public class HomeWork {
         WebElement cssbyAttributeContain = wd.findElement(By.cssSelector("[name*='gistrati']"));
         WebElement xPathByAttributeContain = wd.findElement(By.xpath("//*[contains(@name, 'gistrati')]"));
     }
+
+    public void classwork() {
+        //parent
+        WebElement el = wd.findElement(By.xpath("//h1/parent::*"));
+        WebElement el1 = wd.findElement(By.xpath("//h1/parent::div"));
+        WebElement el2 = wd.findElement(By.xpath("//h1/../"));
+
+        //ancestor
+        WebElement el3 = wd.findElement(By.xpath("//h1/ancestor::*"));
+        WebElement el4 = wd.findElement(By.xpath("//h1/ancestor::div"));
+        WebElement el5 = wd.findElement(By.xpath("//h1/ancestor::div[2]"));
+
+        //h1/ancestor-or-self::*
+
+        WebElement el6 = wd.findElement(By.xpath("//h1/ancestor-or-self::*"));
+        List<WebElement> list = wd.findElements(By.xpath("//h1/ancestor-or-self::*"));
+
+        //h1/following-sibling::*
+
+        List<WebElement> list1 = wd.findElements(By.xpath("//h1/following-sibling::*"));
+
+        //a[@href='/login']/preceding-sibling::a[1]
+
+        WebElement el7 = wd.findElement(By.xpath("//a[@href='/login']/preceding-sibling::a[1]"));
+    }
+
+    @Test
+    public void classwork2() {
+        WebElement element = wd.findElement(By.cssSelector("[name='login']"));
+        String text = element.getText();
+        System.out.println(text);
+
+        WebElement form = wd.findElement(By.xpath("//form"));
+        String textForm = form.getText();
+        System.out.println(textForm);
+
+        WebElement br = wd.findElement(By.xpath("//br"));
+        String brText = br.getText();
+        System.out.println("text br = " + brText);
+
+
+    }
+
 }
